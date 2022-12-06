@@ -1,6 +1,6 @@
 const { By, Builder } = require('selenium-webdriver');
 
-const links = ['https://defiant-apparel.surge.sh/']
+const preworkLink = 'https://defiant-apparel.surge.sh/';
 
 let run = async (link) => {
     driver = await new Builder().forBrowser('chrome').build();
@@ -18,6 +18,4 @@ let run = async (link) => {
     after(async () => await driver.quit());
 }
 
-links.forEach((link) => {
-    run(link);
-});
+run(preworkLink);
